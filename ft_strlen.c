@@ -6,7 +6,7 @@
 /*   By: slimane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:59:32 by slimane           #+#    #+#             */
-/*   Updated: 2024/10/23 14:49:45 by slimane          ###   ########.fr       */
+/*   Updated: 2024/11/08 00:00:30 by slimane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
 		i++;
 	return (i);
 }

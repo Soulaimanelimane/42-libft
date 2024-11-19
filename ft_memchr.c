@@ -6,7 +6,7 @@
 /*   By: slimane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:34:03 by slimane           #+#    #+#             */
-/*   Updated: 2024/10/25 13:12:06 by slimane          ###   ########.fr       */
+/*   Updated: 2024/11/10 02:56:15 by slimane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		p++;
 		n--;
 	}
-	return (0);
+	return (NULL);
 }

@@ -1,27 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slimane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 14:55:28 by slimane           #+#    #+#             */
-/*   Updated: 2024/11/14 22:39:25 by slimane          ###   ########.fr       */
+/*   Created: 2024/10/28 09:36:37 by slimane           #+#    #+#             */
+/*   Updated: 2024/11/17 10:48:49 by slimane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
+	char	*newstr;
+	int		i;
 
+	if (!s || !f)
+		return (NULL);
+	newstr = malloc(ft_strlen(s) + 1);
+	if (!newstr)
+		return (NULL);
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n)
+	while (s[i])
+	{
+		newstr[i] = f(i, s[i]);
 		i++;
-	if (n == i)
-		return (0);
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	}
+	newstr[i] = '\0';
+	return (newstr);
+}
+char f(unsigned int n , char c)
+{
+	if (n > 96 && n  < 123)
+		return (c - 32);
+	return (c);
+}
+int main(){
+	char *str = ft_strmapi("azul" , f);
+	printf("%s\n" , str);
 }

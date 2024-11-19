@@ -6,7 +6,7 @@
 /*   By: slimane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 13:17:23 by slimane           #+#    #+#             */
-/*   Updated: 2024/10/25 13:19:29 by slimane          ###   ########.fr       */
+/*   Updated: 2024/11/10 10:44:06 by slimane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		j++;
 	if (size == 0)
 		return (j);
+	if (dst == src)
+		return (0);
 	while (src[i] && i < size - 1)
 	{
 		dst[i] = src[i];

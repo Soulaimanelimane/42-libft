@@ -6,27 +6,22 @@
 /*   By: slimane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:05:49 by slimane           #+#    #+#             */
-/*   Updated: 2024/10/23 15:29:54 by slimane          ###   ########.fr       */
+/*   Updated: 2024/11/11 13:51:27 by slimane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
 	int		len;
-	char	*find;
 
-	len = 0;
-	while (s[len])
-		len++;
-	len -= 1;
-	while (len > 0)
+	len = ft_strlen((char *)s);
+	while (len >= 0)
 	{
-		if (s[len] == c)
-		{
-			find = (char *)&s[len];
-			return (find);
-		}
+		if (s[len] == (char)c)
+			return ((char *)&s[len]);
 		len--;
 	}
-	return (0);
+	return (NULL);
 }
